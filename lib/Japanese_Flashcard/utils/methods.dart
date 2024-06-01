@@ -10,6 +10,4 @@ loadSession({required BuildContext context, required String topic}){
   Navigator.of(context).push(MaterialPageRoute(builder: (context) => FlashcardsPage(),));
   Provider.of<FlashcardNotifier>(context, listen: false).setTopic(topic: topic);
 
-
-
 }

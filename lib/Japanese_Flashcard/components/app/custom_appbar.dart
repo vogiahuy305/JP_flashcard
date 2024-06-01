@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:japaneseflashcard_app/Japanese_Flashcard/pages/flashcards_page.dart';
 import 'package:provider/provider.dart';

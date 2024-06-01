@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:japaneseflashcard_app/Japanese_Flashcard/animations/half_flip_animation.dart';
-import 'package:japaneseflashcard_app/Japanese_Flashcard/animations/slide_animation.dart';
 import 'package:japaneseflashcard_app/Japanese_Flashcard/components/app/custom_appbar.dart';
-import 'package:japaneseflashcard_app/Japanese_Flashcard/enums/slide_direction.dart';
 import 'package:japaneseflashcard_app/Japanese_Flashcard/notifiers/flashcard_notifier.dart';
-import 'package:japaneseflashcard_app/Japanese_Flashcard/pages/home_page.dart';
 import 'package:provider/provider.dart';
 
 import '../components/flashcard_page/card_1.dart';

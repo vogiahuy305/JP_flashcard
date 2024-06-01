@@ -3,7 +3,6 @@ import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:japaneseflashcard_app/Japanese_Flashcard/animations/slide_animation.dart';
 import 'package:japaneseflashcard_app/Japanese_Flashcard/components/flashcard_page/result_box.dart';
 import 'package:japaneseflashcard_app/Japanese_Flashcard/configs/constants.dart';
 import 'package:japaneseflashcard_app/Japanese_Flashcard/data/words.dart';
@@ -14,20 +13,18 @@ class FlashcardNotifier extends ChangeNotifier{
 
   List<Word> incorrectCards = []; //list các từ chưa thuộc
 
-
   String topic = "";// topic được chọn khi chuyển sang trang mới
-  Word word1 = Word(topic: "", vietnamese: "Loading Arrow", hiragana: "", romaji: "");
-  Word word2 = Word(topic: "", vietnamese: "Loading Arrow", hiragana: "", romaji: "");
+  Word word1 = Word(topic: "", vietnamese: "", hiragana: "", romaji: "");
+  Word word2 = Word(topic: "", vietnamese: "", hiragana: "", romaji: "");
   List<Word> selectedWords = [];
 
   bool isFirstRound = true,  //biến kiểm tra vòng từ vựng bắt đầu
-      isRoundCompleted = false,  // biến kiểm tra vòng từ vựng kết thúc hay chưa
-      isSessionCompleted = false; // biến kiểm tra chủ đề đã được hoàn thành hết chưa
+      isRoundCompleted = false; // biến kiểm tra vòng từ vựng kết thúc hay chưa
 
   reset(){ // hàm thiết lập lại trạng thái ban đầu của một vòng từ vựng
     isFirstRound = true;
     isRoundCompleted = false;
-    isSessionCompleted = false;
+    // isSessionCompleted = false;
   }
 
   setTopic({required String topic}){ //hàm xác định chủ đề được chọn
@@ -35,7 +32,7 @@ class FlashcardNotifier extends ChangeNotifier{
     notifyListeners();
   }
 
-  generateAllSelectedWords(){ // hàm tạo
+  generateAllSelectedWords(){ //
     selectedWords.clear();
     isRoundCompleted = false;
     if(isFirstRound) {
@@ -47,19 +44,19 @@ class FlashcardNotifier extends ChangeNotifier{
     }
   }
 
-  generateCurrentWord({required BuildContext context}) {
+  generateCurrentWord({required BuildContext context}) { //Kiểm tra từ được chọn hiện tại
+    //nếu có từ vựng trong danh sách được chọn
+
     if (selectedWords.isNotEmpty) {
-      final r = Random().nextInt(selectedWords.length);
+      final r = Random().nextInt(selectedWords.length); //chọn ngẫu nhiên
       word1 = selectedWords[r];
       selectedWords.removeAt(r);
     }
+    // nếu không còn từ nào trong danh sách : kết thúc
     else {
-      if(incorrectCards.isEmpty){
-        isSessionCompleted = true;
-        print("session completed: $isSessionCompleted" );
-      }
       isRoundCompleted = true;
       isFirstRound = false;
+      // hiển thị thông báo kết thúc
       Future.delayed(Duration(milliseconds: 500), () {
         showDialog(context: context, builder: (context) => ResultBox(),);
       });
@@ -68,14 +65,6 @@ class FlashcardNotifier extends ChangeNotifier{
     Future.delayed(const Duration(milliseconds: kSlideAwayDuration), () {
       word2 = word1;
     });
-  }
-
-  updateCardOutcome({required Word word, required bool isCorrect}){
-    if(!isCorrect){
-      incorrectCards.add(word);
-    }
-    incorrectCards.forEach((element) => print(element.vietnamese));
-    notifyListeners();
   }
 
   //Hiệu ứng Animation
@@ -115,7 +104,6 @@ class FlashcardNotifier extends ChangeNotifier{
     resetSlideCard1 = true;
     resetFlipCard1 = true;
     slideCard1 = false;
-
     flipCard1 = false;
   }
 

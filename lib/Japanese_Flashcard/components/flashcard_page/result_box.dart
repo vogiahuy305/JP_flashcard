@@ -17,15 +17,14 @@ class _ResultBoxState extends State<ResultBox> {
   Widget build(BuildContext context) {
     return Consumer<FlashcardNotifier>(
       builder:(_,notifier,__) => AlertDialog(
-        title: Text(
-          notifier.isSessionCompleted ? "Hoàn thành chủ đề" : "Kết thúc chủ đề",
+        title: Text("Hoàn thành chủ đề",
           textAlign: TextAlign.center,
         ),
         actions: [
           Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              notifier.isSessionCompleted ? SizedBox() :ElevatedButton(
+              ElevatedButton(
                 onPressed: () {
                   notifier.reset();
                   Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) =>
