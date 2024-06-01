@@ -69,6 +69,7 @@ flutter:
      - assets/images/Màu sắc/
      - assets/images/Số đếm/
      - assets/images/Gia đình/
+     - assets/images/Món ăn/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
