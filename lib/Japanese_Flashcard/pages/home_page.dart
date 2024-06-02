@@ -13,7 +13,6 @@ class JapaneseApp_PageHome extends StatefulWidget {
 class _JapaneseApp_PageHomeState extends State<JapaneseApp_PageHome> {
   List<String> _topics = [];
 
-
   //thêm các topic từ word vào _topics => sắp xếp theo thứ tự
   @override
   initState() {
@@ -30,10 +29,9 @@ class _JapaneseApp_PageHomeState extends State<JapaneseApp_PageHome> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size; //biến khai báo để lấy kích thước màn hình
     final padding = size.width * 0.04;
-
     return Scaffold(
+      //thanh appbar hiển thị tên ứng dụng
       appBar: AppBar(
-        //thanh appbar hiển thị tên ứng dụng
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(30),
@@ -65,8 +63,10 @@ class _JapaneseApp_PageHomeState extends State<JapaneseApp_PageHome> {
             ),
             SliverGrid(
                 delegate: SliverChildBuilderDelegate(
-                  childCount: _topics.length,
-                    (context, index) => TopicTile(topic: _topics[index])
+                    (BuildContext context, int index){
+                      return TopicTile(topic: _topics[index]);
+                    },
+                    childCount: _topics.length,
                 ), gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   crossAxisSpacing: 2,

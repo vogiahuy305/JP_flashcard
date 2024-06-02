@@ -7,7 +7,8 @@ import 'package:provider/provider.dart';
 void main(){
   runApp(MultiProvider(
     providers: [
-      ChangeNotifierProvider(create: (_) => FlashcardNotifier())
+      ChangeNotifierProvider(create: (_) => FlashcardNotifier()
+      )
     ],
       child: const JapaneseApp())
   );

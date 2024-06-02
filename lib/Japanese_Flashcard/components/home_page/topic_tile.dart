@@ -15,7 +15,6 @@ class TopicTile extends StatelessWidget {
     return FadeInAnimation(
       child: GestureDetector(
         onTap: () {
-          print("tile tapped $topic");
           loadSession(context: context, topic: topic);
         },
         child: Padding(
@@ -36,6 +35,7 @@ class TopicTile extends StatelessWidget {
                           child: Image.asset('assets/images/topics/$topic.png')),
                     )
                 ),
+                //tên topic hiển thị ra trang chủ
                 Expanded(
                     flex: 1,
                     child: Padding(

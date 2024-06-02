@@ -21,7 +21,7 @@ class CardDisplay extends StatelessWidget {
         ) :
         Column(
           children: [
-            buildImage(notifier, notifier.word2.vietnamese),
+            buildImage(notifier, notifier.word1.vietnamese),
             buildTextBox(notifier.word1.hiragana, context, 2),
             buildTextBox(notifier.word1.romaji, context, 1),
             TTSButton(),

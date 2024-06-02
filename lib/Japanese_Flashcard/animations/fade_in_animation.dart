@@ -14,7 +14,6 @@ class _FadeInAnimationState extends State<FadeInAnimation> with SingleTickerProv
   late final AnimationController _animationController;
   late final Animation<double> _scaleAnimation, _opacityAnimation;
 
-
   @override
   void initState() {
     // TODO: implement initState

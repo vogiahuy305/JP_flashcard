@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:japaneseflashcard_app/Japanese_Flashcard/configs/constants.dart';
 import 'package:japaneseflashcard_app/Japanese_Flashcard/pages/flashcards_page.dart';
 import 'package:provider/provider.dart';
 
@@ -22,13 +23,11 @@ class CustomAppbar extends StatelessWidget {
                   builder: (context) => FlashcardsPage(),),
                       (route) => false,);
               },
-              icon: Icon(Icons.clear))
+              icon: Icon(Icons.refresh))
         ],
         leading: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Hero(
-              tag: notifier.topic,
-              child: IconButton(
+          child: IconButton(
                   onPressed: () {
                     notifier.reset();
                     Navigator.pushAndRemoveUntil(context, MaterialPageRoute(
@@ -36,7 +35,6 @@ class CustomAppbar extends StatelessWidget {
                           (route) => false,);
                   },
                   icon: Icon(Icons.home))
-          ),
         ),
         title: Text(notifier.topic),
       ),

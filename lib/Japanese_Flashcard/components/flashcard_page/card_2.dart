@@ -29,6 +29,7 @@ class Card2 extends StatelessWidget {
           }
           if(details.primaryVelocity! < -100){
             notifier.runSwipeCard2(direction: SlideDirection.rightAway);
+            notifier.resetCard2();
             notifier.runSlideCard1();
             notifier.setIgnoreTouch(ignore: true);
             notifier.generateCurrentWord(context: context);
@@ -63,7 +64,7 @@ class Card2 extends StatelessWidget {
                 child: Transform(
                     alignment: Alignment.center,
                     transform: Matrix4.rotationY(pi),
-                    child: const CardDisplay(isCard1: false)
+                    child: CardDisplay(isCard1: false)
                 ),
               ),
             ),

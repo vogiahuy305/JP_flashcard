@@ -6,11 +6,11 @@ class SlideAnimation extends StatefulWidget {
   const SlideAnimation({required this.child, required this.direction, this.animate = true,
     this.reset, this.animationCompleted,
     this.animationDelay = 0,
-    this.animationDuration = kSlideAwayDuration, super.key});
+    this.animationDuration = 600, super.key});
 
   final Widget child;
-  final SlideDirection direction;
-  final bool animate;
+  final SlideDirection direction; //hướng widget di chuyển
+  final bool animate; //
   final bool? reset;
   final VoidCallback? animationCompleted;
   final int animationDuration;
