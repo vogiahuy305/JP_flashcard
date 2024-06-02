@@ -44,4 +44,10 @@ final List<Word> words = [
   Word(topic: "Món ăn", vietnamese: "Mì ramen", hiragana: "らめん", romaji: "Ramen"),
   Word(topic: "Món ăn", vietnamese: "Bánh mì", hiragana: "パン", romaji: "Pan"),
   Word(topic: "Món ăn", vietnamese: "Tenpura", hiragana: "てんぷら", romaji: "Tenpura"),
+  Word(topic: "Món ăn", vietnamese: "Cơm đóng hộp", hiragana: "べんとう", romaji: "Bentou"),
+  Word(topic: "Món ăn", vietnamese: "Bánh Mochi", hiragana: "もち", romaji: "Mochi"),
+  Word(topic: "Món ăn", vietnamese: "Cá", hiragana: "さかな", romaji: "Sakana"),
+  Word(topic: "Món ăn", vietnamese: "Trứng", hiragana: "たまご", romaji: "Tamago"),
+  Word(topic: "Món ăn", vietnamese: "Thịt", hiragana: "にく", romaji: "Niku"),
+  Word(topic: "Món ăn", vietnamese: "Takoyaki", hiragana: "たこやき", romaji: "Takoyaki")
 ];
